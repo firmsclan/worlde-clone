@@ -61,4 +61,4 @@ keys.forEach(key => {
     buttonElement.addEventListener('click', () => handleClick(key))
     keyboard.append(buttonElement)
 })
-handleClick()
+handleClick();
