@@ -31,20 +31,26 @@ const keys = [
     '«',
 ]
 
-const guessRows = [
-    ['', '', '', '', ''],
-    ['', '', '', '', ''],
-    ['', '', '', '', ''],
-    ['', '', '', '', ''],
-    ['', '', '', '', ''],
-    ['', '', '', '', '']
-]
+// const guessRows = [
+//     ['', '', '', '', ''],
+//     ['', '', '', '', ''],
+//     ['', '', '', '', ''],
+//     ['', '', '', '', ''],
+//     ['', '', '', '', ''],
+//     ['', '', '', '', '']
+// ]
+
+const guessRows = 
+Array(6).fill(Array(5).fill(''))
+    
+
+    
 function handleClick(){
     console.log('clicked')
 }
 guessRows.forEach((guessRow, guessRowIndex) => {
     const rowElement = document.createElement('div')
-    rowElement.setAttribute('id', 'guessRow-' + guessRowIndex)
+    rowElement.setAttribute('id', 'guessRow-' +  guessRowIndex)
     guessRow.forEach((_guess, guessIndex) => {
         const tileElement = document.createElement('div')
         tileElement.setAttribute('id', 'guessRow-' + guessRowIndex + '-tile-' + guessIndex)
@@ -57,8 +63,8 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 keys.forEach(key => {
     const buttonElement = document.createElement('button')
     buttonElement.textContent = key
-    buttonElement.setAttribute('id', key)
-    buttonElement.addEventListener('click', () => handleClick(key))
-    keyboard.append(buttonElement)
+    buttonElement.setAttribute('id', key) 
+    buttonElement.addEventListener('click', ()  => handleClick(key)) 
+    keyboard.append(buttonElement) 
 })
 handleClick();
